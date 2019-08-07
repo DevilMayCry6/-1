@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(){}
+            Person.prototype = {
+                constructor:Person,
+                name : "j",
+                age : 30,
+                job : "w",
+                friends : ["s","d"],
+                sayName : function(){
+                    alert(this.name);
+                }
+            }
+            var person1 = new Person();
+            var person2 = new Person();
+            person1.friends.push("f");
+            alert(person1.friends);//"s,d,f"
+            alert(person2.friends);//"s,d,f"
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象原型</title>
+</head>
+<body>
+    <script>
+        function Person(){}
+            Person.prototype.name = "w";
+            Person.prototype.age= 131;
+            Person.prototype.s=function(){
+                alert(this.name);
+            };
+            var Person1 = new Person();
+            person1.s();//"w"
+            var person2 = new Person();
+            person2.s();//"w"
+            alert(person1.s == person2.s);//true
+
+            var person1 = new Person();
+            var person2 = new Person();
+            person1.name="s";
+            alert(person1.name);//"s" - from instance
+            alert(person2.name);//"w"-from prototype
+    </script>
+</body>
+</html>

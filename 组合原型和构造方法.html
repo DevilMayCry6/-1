@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组合原型和构造方法z</title>
+</head>
+<body>
+    <script>
+        function P(name,age,job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.friends = ["a","s"];
+        }
+        P.p = {
+            constructor : P,
+            N : function(){
+                alert(this.name);
+            }
+        };
+        var p1 = new P("d",12,"job");
+        var p2 = new P("f",22,"job2");
+        p1.friends.push("g");
+        alert(p1.friends);//"a,s,g"
+        alert(p2.friends);//"a,s"
+        alert(p1.friends == p2.friends);//false
+        alert(p1.N == p2.N);//true
+    </script>
+</body>
+</html>
